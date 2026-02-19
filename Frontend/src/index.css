@@ -1,0 +1,740 @@
+/* =========================
+   MINIMAL RESET & BASE
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background: #fafafa;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+/* =========================
+   CARD
+========================== */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.25rem;
+  border: 1px solid #eee;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.card-header h2 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #333;
+}
+
+.card-header h2 i {
+  color: #555;
+  font-size: 0.85rem;
+}
+
+.card-header p {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+/* =========================
+   BUTTONS
+========================== */
+button, input, select {
+  font-family: inherit;
+  font-size: 0.85rem;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.btn {
+  border-radius: 6px;
+  padding: 0.4rem 0.85rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+  font-size: 0.8rem;
+}
+
+.btn i {
+  font-size: 0.8rem;
+}
+
+.btn-primary {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #333;
+}
+
+.btn-outline {
+  background: #fff;
+  color: #555;
+  border-color: #ddd;
+}
+
+.btn-outline:hover {
+  background: #f5f5f5;
+  border-color: #ccc;
+}
+
+.btn-small {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+}
+
+.btn-icon {
+  border-radius: 6px;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+  background: #f5f5f5;
+  color: #555;
+  border: 1px solid #eee;
+  transition: all 0.15s ease;
+}
+
+.btn-icon:hover {
+  background: #eee;
+  color: #1a1a1a;
+}
+
+/* =========================
+   PILLS & CHIPS
+========================== */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.7rem;
+  background: #f0f0f0;
+  color: #555;
+  gap: 0.25rem;
+}
+
+.pill span.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+}
+
+.section-action-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #333;
+}
+
+.section-action-title i {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.muted {
+  color: #999;
+  font-size: 0.78rem;
+}
+
+/* =========================
+   LAYOUT
+========================== */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 100vh;
+}
+
+header.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #eee;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand-logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.brand-text h1 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.brand-text h1 i {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.brand-text p {
+  font-size: 0.65rem;
+  color: #aaa;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.section-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.flex-row {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.flex-grow {
+  flex: 1;
+}
+
+/* =========================
+   TABLES
+========================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+
+th, td {
+  padding: 0.4rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+}
+
+th {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #999;
+  font-weight: 500;
+  background: transparent;
+}
+
+tr:hover td {
+  background: #fafafa;
+}
+
+/* =========================
+   FORMS
+========================== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 0.75rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.form-field label {
+  font-size: 0.7rem;
+  color: #777;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 500;
+}
+
+.form-field label i {
+  color: #bbb;
+  font-size: 0.65rem;
+}
+
+.field-inline {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.field-inline label {
+  font-size: 0.72rem;
+  color: #777;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="search"] {
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  padding: 0.4rem 0.65rem;
+  background: #fff;
+  font-size: 0.82rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus {
+  border-color: #999;
+}
+
+input[type="search"] {
+  width: 100%;
+}
+
+input[type="date"] {
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 0.82rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+input[type="date"]:focus {
+  border-color: #999;
+}
+
+/* Summaries */
+.summary-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+}
+
+.summary-item {
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  background: #f5f5f5;
+  font-size: 0.75rem;
+}
+
+.summary-item strong {
+  font-weight: 600;
+}
+
+.divider {
+  height: 1px;
+  background: #eee;
+  margin: 0.5rem 0;
+}
+
+.attendance-table-wrapper {
+  max-height: 260px;
+  overflow: auto;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+/* Dropdowns */
+select {
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  padding: 0.4rem 1.8rem 0.4rem 0.65rem;
+  background-color: #fff;
+  font-size: 0.82rem;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23999' d='M1 0l4 4 4-4 1 1-5 5-5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 10px;
+  transition: border-color 0.15s ease;
+}
+
+select:focus {
+  border-color: #999;
+}
+
+.form-field select,
+.field-inline select,
+.card-header select {
+  min-width: 110px;
+}
+
+/* Section chips */
+.section-chip {
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.section-chip:hover {
+  background: #eee;
+}
+
+.section-chip.active {
+  background: #e8e8e8;
+  border: 1px solid #ccc;
+}
+
+/* Reports grid */
+.reports-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 0.75rem;
+}
+
+/* =========================
+   CERTIFICATE
+========================== */
+.cert-preview-container {
+  width: 100%;
+  overflow-x: auto;
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: center;
+}
+
+#cert-mobile-note {
+  display: none;
+  margin-top: 0.5rem;
+}
+
+.certificate-view {
+  width: 1000px;
+  height: 720px;
+  background-color: #fcfbf6;
+  color: #1a1a1a;
+  padding: 50px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 2px solid #b89c56;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  transform-origin: top left;
+}
+
+.cert-inner-border {
+  border: 4px double #b89c56;
+  height: 100%;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cert-inner-border::before,
+.cert-inner-border::after {
+  content: "✦";
+  position: absolute;
+  font-size: 2rem;
+  color: #b89c56;
+}
+
+.cert-inner-border::before {
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.cert-inner-border::after {
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 50%);
+}
+
+.cert-title {
+  font-family: "Cinzel", serif;
+  font-size: 3.5rem;
+  color: #4a4a4a;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cert-subtitle {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cert-recipient {
+  font-family: "Great Vibes", cursive;
+  font-size: 3.5rem;
+  color: #b89c56;
+  margin: 10px 0;
+  border-bottom: 2px solid #ddd;
+  padding: 0 2rem;
+  display: inline-block;
+  min-width: 400px;
+}
+
+.cert-body-text {
+  font-family: "Roboto", serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 20px 0;
+  color: #333;
+  max-width: 80%;
+}
+
+.cert-stats-grid {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 20px 0;
+  background: rgba(184, 156, 86, 0.08);
+  padding: 15px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.cert-stat-item {
+  text-align: center;
+}
+
+.cert-stat-val {
+  font-family: "Cinzel", serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #b89c56;
+}
+
+.cert-stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #555;
+  letter-spacing: 1px;
+}
+
+.cert-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 40px;
+  padding: 0 40px;
+}
+
+.cert-signature {
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 5px;
+  width: 200px;
+}
+
+.cert-signature h4 {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: -5px;
+  position: relative;
+  top: -35px;
+}
+
+.cert-signature p {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666;
+}
+
+.seal {
+  width: 80px;
+  height: 80px;
+  background: #b91c1c;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 2px dashed #fff;
+  outline: 4px solid #b91c1c;
+  margin-top: 10px;
+}
+
+.certificate-view,
+.cert-inner-border {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  color-adjust: exact;
+}
+
+.certificate-view * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.certificate-view.no-shadow {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* =========================
+   RESPONSIVE
+========================== */
+@media (max-width: 900px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+  .reports-grid {
+    grid-template-columns: 1fr;
+  }
+  .cert-preview-container {
+    display: none;
+  }
+  #cert-mobile-note {
+    display: block;
+  }
+  #download-desktop-wrapper {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 640px) {
+  header.app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+  .card {
+    padding: 0.85rem;
+  }
+}
+
+/* =========================
+   LOGIN
+========================== */
+.login-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #fafafa;
+  padding: 1rem;
+}
+
+.login-card {
+  max-width: 380px;
+  width: 100%;
+}
+
+.login-title {
+  margin-bottom: 1rem;
+}
+
+.login-title h1 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.login-title h1 i {
+  color: #888;
+  font-size: 0.95rem;
+}
+
+.login-title p {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+.error-text {
+  color: #dc2626;
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+}
